@@ -1,56 +1,34 @@
-
-
 const form = document.getElementById("trainingForm");
 
-form.addEventListener("submit", async function (e) {
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const registrationID =
-        "DGF-" + Date.now();
+    const formData = new FormData();
 
-    const data = {
-
-        fullname:
-            document.getElementById("fullname").value,
-
-        school:
-            document.getElementById("school").value,
-
-        referral:
-            document.getElementById("referral").value,
-
-        location:
-            document.getElementById("location").value,
-
-        whatsapp:
-            document.getElementById("whatsapp").value,
-
-        registrationID:
-            registrationID
-
-    };
+    formData.append("fullname", document.getElementById("fullname").value);
+    formData.append("school", document.getElementById("school").value);
+    formData.append("referral", document.getElementById("referral").value);
+    formData.append("location", document.getElementById("location").value);
+    formData.append("whatsapp", document.getElementById("whatsapp").value);
+    formData.append("registrationID", "DGF-" + Date.now());
 
     try {
 
-        await fetch(
-            "https://script.google.com/macros/s/AKfycbxP5FFQZIhJMRx8-ynk2BLfJVG3khWmQPnS7Miq6ADaOfvNs9iI5ZWyDoj1k0b4aH33Zw/exec",
-            {
+        const response = await fetch("AKfycbzmsl6QfOlElSMYSr0WzCPCbeNE_OuMFHl5LK4prxFTWQ-ITsttyg9p6WgPv9QHJ4eL3wAKfycbwxAFs9mxHKJ8F7XtYTBs8D8Xxl9EbqH8bDByOviqc6Je3STeNlQuCRSROXJX29wdxdDw", {
+            method: "POST",
+            body: formData
+        });
 
-                method: "POST",
-
-                body: JSON.stringify(data)
-
-            }
-        );
+        const result = await response.text();
 
         alert("Registration Successful!");
 
         form.reset();
 
-    }
+    } catch (error) {
 
-    catch (error) {
+        console.error(error);
 
         alert("Submission Failed");
 
