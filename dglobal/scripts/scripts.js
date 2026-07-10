@@ -1,7 +1,7 @@
 const form = document.getElementById("trainingForm");
 
 const WEB_APP_URL =
-"https://script.google.com/macros/s/AKfycbw635Z9IYwpnJb4JKMzQWV-RDCnrDF-3Ee3IiN8wsSRUOjULbDcKOaqgmF1ogi2--TIGQ/exec";
+"https://script.google.com/macros/s/AKfycbwpcpzd0KAhkUzQMv9Wy0ODDy5K3yFGZqTzEQviyrVz9NbZzVuEpe49HcAQSkKeRygKBw/exec";
 
 form.addEventListener("submit", async function(e){
 
