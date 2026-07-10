@@ -1,32 +1,64 @@
 const form = document.getElementById("trainingForm");
 
-form.addEventListener("submit", async (e) => {
+const WEB_APP_URL =
+"https://script.google.com/macros/s/AKfycbwdOMplGfJSiaqjtNMLaALNIaC1wbcXaKlkPGX55D9gkgFzVBLF35jQJ6vI8coVEoOzhA/exec";
+
+form.addEventListener("submit", async function(e){
 
     e.preventDefault();
 
     const formData = new FormData();
 
-    formData.append("fullname", document.getElementById("fullname").value);
-    formData.append("school", document.getElementById("school").value);
-    formData.append("referral", document.getElementById("referral").value);
-    formData.append("location", document.getElementById("location").value);
-    formData.append("whatsapp", document.getElementById("whatsapp").value);
-    formData.append("registrationID", "DGF-" + Date.now());
+    formData.append(
+        "fullname",
+        document.getElementById("fullname").value
+    );
 
-    try {
+    formData.append(
+        "school",
+        document.getElementById("school").value
+    );
 
-        const response = await fetch("AKfycbzmsl6QfOlElSMYSr0WzCPCbeNE_OuMFHl5LK4prxFTWQ-ITsttyg9p6WgPv9QHJ4eL3wAKfycbwxAFs9mxHKJ8F7XtYTBs8D8Xxl9EbqH8bDByOviqc6Je3STeNlQuCRSROXJX29wdxdDw", {
-            method: "POST",
-            body: formData
+    formData.append(
+        "referral",
+        document.getElementById("referral").value
+    );
+
+    formData.append(
+        "location",
+        document.getElementById("location").value
+    );
+
+    formData.append(
+        "whatsapp",
+        document.getElementById("whatsapp").value
+    );
+
+    formData.append(
+        "registrationID",
+        "DGF-"+Date.now()
+    );
+
+    try{
+
+        const response = await fetch(WEB_APP_URL,{
+            method:"POST",
+            body:formData
         });
 
-        const result = await response.text();
+        if(response.ok){
 
-        alert("Registration Successful!");
+            alert("Registration Successful!");
 
-        form.reset();
+            form.reset();
 
-    } catch (error) {
+        }else{
+
+            alert("Server returned an error.");
+
+        }
+
+    }catch(error){
 
         console.error(error);
 
