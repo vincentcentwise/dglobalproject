@@ -37,51 +37,27 @@ showForm.onclick = () => {
 };
 
 
-const scriptURL =
-"https://script.google.com/macros/s/AKfycby997VDwABqOrCjHPV8XxbqrJFWOnCuhEe-Sa1nCfXDQidpt-Cc_fL74LjEOttcH8JX/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxVCBuzEeH4LYXLQkcrMlhoGwo_QlWVGFfumuW5Z6TrJWm1WLL050GmU3pqRXnWIfpn/exec";
 
-const contactForm = document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", function(e){
+contactForm.addEventListener("submit", function(e) { to
 
     e.preventDefault();
 
-    const data = {
-
-        name: document.getElementById("name").value,
-
-        phone: document.getElementById("phone").value,
-
-        email: document.getElementById("email").value
-
-    };
+    const formData = new FormData(contactForm);
 
     fetch(scriptURL, {
-
         method: "POST",
-
-        body: JSON.stringify(data)
-
+        body: formData
     })
-
-    .then(response => response.json())
-
-    .then(result => {
-
+    .then(response => response.text())
+    .then(data => {
         alert("Thank you! Your message has been sent.");
-
         contactForm.reset();
-
-        document.getElementById("contactModal").style.display = "none";
-
+        modal.style.display = "none";
     })
-
     .catch(error => {
-
-        console.log(error);
-
+        console.error(error);
         alert("Failed to send.");
-
     });
 
 });
