@@ -37,7 +37,7 @@ showForm.onclick = () => {
 };
 
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbxVCBuzEeH4LYXLQkcrMlhoGwo_QlWVGFfumuW5Z6TrJWm1WLL050GmU3pqRXnWIfpn/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbx0MnNlddBl5xKRmfWsqyiLj8ERachQBaVEjTZom7Yw_HmxF6vc1PI7_6CTSguatTtp/exec";
 
 contactForm.addEventListener("submit", function(e) { to
 
