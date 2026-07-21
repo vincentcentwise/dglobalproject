@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <span class="logo">CENT</span>
+        <div class="nav-links">
+            <a href="#services">SERVICES</a>
+            <a href="#projects">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact-section">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span class="tag">Available for projects</span>
+        <h1>Building things <br> for the <em>Web.</em> </h1>
+        <p class="lead">
+            Developer & educator based in Lagos, Nigeria. Crafting clean software and training the next generation of
+            builders.
+        </p>
+        <a href="https://vincentcentwise.github.io/wdd130/" class="btn">SEE MY WORK</a>
+    </section>
+
+    <hr class="divider">
+
+    <section class="services" id="services">
+        <p class="section-label">What I do</p>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Clean, fast website and web app built with modern tools and best practices.</p>
+            </div>
+            <div class="service-card">
+                <h3>SaaS & Software</h3>
+                <p>Custom software solutions tailored to your business needs and workflows.</p>
+            </div>
+            <div class="service-card">
+                <h3>Tech Education</h3>
+                <p>Hands-on developer training programs that take beginners to professionals.</p>
+            </div>
+            <div class="service-card">
+                <h3>Cloud Applications</h3>
+                <p>Scalable cloud-based apps designed for performance and reliability.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+
+    <section class="projects" id="projects">
+
+        <p class="small-title">SELECTED PROJECTS</p>
+
+        <div class="project">
+            <h2>ZepLink Platform</h2>
+            <span>SAAS | 2025</span>
+        </div>
+
+        <div class="project">
+            <h2>Developer Training Portal</h2>
+            <span>EDUCATION | 2025</span>
+        </div>
+
+        <div class="project">
+            <h2>Starlink Installation Services</h2>
+            <span>WEB | 2025</span>
+        </div>
+
+        <div class="project">
+            <h2>VTU Application</h2>
+            <span>SAAS | 2025</span>
+        </div>
+
+    </section>
+
+
+    <section class="about" id="about">
+
+        <div class="left">
+
+            <h1>
+                Founder,
+                Builder &
+                Educator.
+            </h1>
+
+        </div>
+
+        <div class="right">
+
+            <p>
+
+                I build software for businesses and train developers to create modern web applications.
+
+                Outside software engineering, I mentor beginners and help them become job-ready developers.
+
+            </p>
+
+            <div class="stats">
+
+                <div>
+                    <h2>2+</h2>
+                    <p>Years Building</p>
+                </div>
+
+                <div>
+                    <h2>5+</h2>
+                    <p>Students Trained</p>
+                </div>
+
+                <div>
+                    <h2>5+</h2>
+                    <p>Projects Delivered</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="contact-section" id="contact-section">
+
+        <h1>Let's work together.</h1>
+
+        <button id="openModal">GET IN TOUCH</button>
+
+    </section>
+
+
+    <!-- Modal -->
+
+    <div class="modal" id="contactModal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <h2>Contact Me</h2>
+
+            <p>Choose an option below.</p>
+
+            <button class="choice-btn" id="showForm">
+                Fill Contact Form
+            </button>
+
+            <a href="https://wa.me/2348133488687" target="_blank" class="whatsapp-btn">
+
+                Chat on WhatsApp
+
+            </a>
+
+            <form id="contactForm">
+
+                <input type="text" placeholder="Full Name" required>
+
+                <input type="tel" placeholder="Phone Number" required>
+
+                <input type="email" placeholder="Email Address" required>
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+
+
+    </section>
+
+</body>
+
+</html>
