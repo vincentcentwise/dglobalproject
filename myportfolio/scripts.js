@@ -10,86 +10,78 @@ const form = document.getElementById("contactForm");
 
 openBtn.onclick = () => {
 
-modal.style.display = "block";
+    modal.style.display = "block";
 
 };
 
 closeBtn.onclick = () => {
 
-modal.style.display = "none";
+    modal.style.display = "none";
 
 };
 
-window.onclick = (e)=>{
+window.onclick = (e) => {
 
-if(e.target==modal){
+    if (e.target == modal) {
 
-modal.style.display="none";
+        modal.style.display = "none";
 
-}
-
-};
-
-showForm.onclick = ()=>{
-
-form.style.display="block";
+    }
 
 };
 
-form.addEventListener("submit",(e)=>{
+showForm.onclick = () => {
 
-e.preventDefault();
+    form.style.display = "block";
 
-alert("Thank you! Your message has been received.");
-
-form.reset();
-
-});
+};
 
 
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbw556ujuZi-KSPKwJJc-SzbysegatLAgKpx7Lbspl2BzYhHL9z7ZKPvf2OgPKx16uNN/exec";
+"https://script.google.com/macros/s/AKfycby997VDwABqOrCjHPV8XxbqrJFWOnCuhEe-Sa1nCfXDQidpt-Cc_fL74LjEOttcH8JX/exec";
 
-const form = document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
 
-form.addEventListener("submit", function(e){
+contactForm.addEventListener("submit", function(e){
 
-e.preventDefault();
+    e.preventDefault();
 
-const data = {
+    const data = {
 
-name:document.getElementById("name").value,
+        name: document.getElementById("name").value,
 
-phone:document.getElementById("phone").value,
+        phone: document.getElementById("phone").value,
 
-email:document.getElementById("email").value
+        email: document.getElementById("email").value
 
-};
+    };
 
-fetch(scriptURL,{
+    fetch(scriptURL, {
 
-method:"POST",
+        method: "POST",
 
-body:JSON.stringify(data)
+        body: JSON.stringify(data)
 
-})
+    })
 
-.then(res=>res.json())
+    .then(response => response.json())
 
-.then(response=>{
+    .then(result => {
 
-alert("Message Sent Successfully!");
+        alert("Thank you! Your message has been sent.");
 
-form.reset();
+        contactForm.reset();
 
-})
+        document.getElementById("contactModal").style.display = "none";
 
-.catch(error=>{
+    })
 
-alert("Something went wrong.");
+    .catch(error => {
 
-console.log(error);
+        console.log(error);
 
-});
+        alert("Failed to send.");
+
+    });
 
 });
