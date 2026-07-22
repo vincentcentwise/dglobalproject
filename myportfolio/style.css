@@ -483,8 +483,44 @@ gap:10px;
 
 .modal-content{
 
-width:90%;
+width:80%;
 
 }
+
+ header {
+
+        padding: 15px 20px;
+
+    }
+
+    .logo img {
+
+        width: 55px;
+
+        height: 55px;
+
+    }
+
+    nav {
+
+        display: flex;
+
+        gap: 18px;
+
+        align-items: center;
+
+    }
+
+    nav a {
+
+        font-size: 0.9rem;
+
+    }
+
+    .logo {
+
+        margin-right: 15px;
+
+    }
 
 }
